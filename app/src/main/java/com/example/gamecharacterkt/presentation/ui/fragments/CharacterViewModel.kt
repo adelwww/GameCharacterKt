@@ -1,9 +1,9 @@
 package com.example.gamecharacterkt.presentation.ui.fragments
 
-import com.example.gamecharacterkt.domain.models.toUI
-import com.example.gamecharacterkt.domain.usecase.FetchCharactersUseCase
+import com.example.domain.usecase.FetchCharactersUseCase
 import com.example.gamecharacterkt.presentation.base.BaseViewModel
-import com.example.gamecharacterkt.presentation.ui.modelsui.CharacterModelUI
+import com.example.gamecharacterkt.presentation.models.CharacterModelUI
+import com.example.gamecharacterkt.presentation.models.toUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject

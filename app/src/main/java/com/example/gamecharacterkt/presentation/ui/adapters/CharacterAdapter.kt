@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.gamecharacterkt.databinding.ItemCharacterBinding
 import com.example.gamecharacterkt.presentation.base.BaseDiffUtilItemCallback
-import com.example.gamecharacterkt.presentation.ui.modelsui.CharacterModelUI
+import com.example.gamecharacterkt.presentation.models.CharacterModelUI
 
 class CharacterAdapter: ListAdapter<CharacterModelUI, CharacterAdapter.CharacterViewHolder>(
     BaseDiffUtilItemCallback()

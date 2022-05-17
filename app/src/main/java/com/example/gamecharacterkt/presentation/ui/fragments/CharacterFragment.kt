@@ -1,7 +1,6 @@
 package com.example.gamecharacterkt.presentation.ui.fragments
 
 import android.util.Log
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding

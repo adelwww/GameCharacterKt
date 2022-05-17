@@ -2,7 +2,8 @@ package com.example.gamecharacterkt.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.gamecharacterkt.domain.either.Either
+import com.example.domain.either.Either
+import com.example.domain.models.CharacterModel
 import com.example.gamecharacterkt.presentation.ui.state.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

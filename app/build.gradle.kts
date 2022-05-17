@@ -1,13 +1,18 @@
 plugins {
-    id("com.android.application")
+    // Application
+    id(libs.plugins.agp.application.get().pluginId)
 
-    kotlin("android")
+    // Kotlin
+    id("kotlin-android")
 
-    //Kapt
-    kotlin("kapt")
+    // Kapt
+    id("kotlin-kapt")
 
-    //hilt
-    id("dagger.hilt.android.plugin")
+    // Navigation SafeArgs
+    id(libs.plugins.navigation.safeArgs.get().pluginId)
+
+    // Hilt
+    id(libs.plugins.hilt.android.get().pluginId)
 }
 
 android {
@@ -45,66 +50,32 @@ android {
 }
 
 dependencies {
-//Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
 
-    //Core
-    implementation("androidx.core:core-ktx:1.7.0")
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
-    //AppCompat
-    implementation("androidx.appcompat:appcompat:1.4.1")
+    // UI Components
+    implementation(libs.bundles.uiComponents)
 
-    //Material Design Components
-    implementation("com.google.android.material:material:1.6.0")
-
-    //UI Components
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    // Core
+    implementation(libs.android.core)
 
     // Activity
-    val activity_version = "1.4.0"
-    implementation("androidx.activity:activity-ktx:$activity_version")
+    implementation(libs.activity.activity)
 
-    // fragment
-    val fragment_version = "1.4.1"
-
-    implementation("androidx.fragment:fragment-ktx:$fragment_version")
-
-    //viewBinding
-    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6")
+    // Fragment
+    implementation(libs.fragment.fragment)
 
     // Lifecycle
-    val lifecycle_version = "2.4.0"
+    implementation(libs.bundles.lifecycle)
 
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
-
-    // | for ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-
-    // ViewModel and LiveData
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-
-    //navigation
-    val nav_version = "2.3.5"
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-    //Glide
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-
-    //retrofit
-    val retrofit_version = "2.9.0"
-    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
-
-    //okhttp
-    // define a BOM and its version
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.2"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
+    // Navigation
+    implementation(libs.bundles.navigation)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.40")
-    kapt("com.google.dagger:hilt-android-compiler:2.40")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    // Glide
+    implementation(libs.glide.glide)
 }

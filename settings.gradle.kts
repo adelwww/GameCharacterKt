@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AttackOnTitanApp"
 include (":app")
+include(":domain")
+include(":data")
+enableFeaturePreview("VERSION_CATALOGS")
