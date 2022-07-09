@@ -12,10 +12,5 @@ class NetworkClient @Inject constructor(
 ) {
     private val provideRetrofit = retrofitClient.provideRetrofit(okHttp.provideOkHttpClient())
 
-    fun provideCharactersApiService(): CharacterApiService =provideRetrofit.create()
-
-    inline fun <reified T : Any> Retrofit.create(): T {
-        return create(T::class.java)
-    }
-
+    fun provideCharactersApiService( ): CharacterApiService =provideRetrofit.create()
 }

@@ -20,7 +20,7 @@ abstract class BaseViewModel : ViewModel() {
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             state.value = UIState.Loading()
-            this@collectRequest.collect {
+            this@colle  ctRequest.collect {
                 when (it) {
                     is Either.Left -> state.value = UIState.Error(it.value)
                     is Either.Right -> state.value = UIState.Success(mapData(it.value))
